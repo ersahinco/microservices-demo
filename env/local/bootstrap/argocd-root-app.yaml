@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://YOUR_GIT_FORK_URL.git
+    repoURL: https://github.com/ersahinco/microservices-demo.git
     targetRevision: main
     path: env/local/apps
     directory:
