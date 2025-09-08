@@ -13,8 +13,8 @@ patches:
   - target: { kind: Deployment, name: frontend }
     patch: |-
       - op: remove
-        path: /spec
+        path: /spec/template/spec/containers
   - target: { kind: Service, name: frontend }
     patch: |-
       - op: remove
-        path: /spec
+        path: /spec/ports
