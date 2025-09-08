@@ -8,9 +8,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://YOUR_GIT_FORK_URL.git
+    repoURL: https://github.com/ersahinco/microservices-demo.git
     targetRevision: main
-    path: env/local/apps/metallb-config
+    path: env/local/workloads/metallb-config
   destination:
     server: https://kubernetes.default.svc
     namespace: metallb-system

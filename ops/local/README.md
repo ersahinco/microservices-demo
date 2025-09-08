@@ -27,6 +27,12 @@ ls -l ops/local/bin/cluster-up.sh
 find ops/local/bin -type f -name "*.sh" -print0 | xargs -0 chmod +x
 ```
 
+## Kind network
+```
+docker network inspect kind \
+  | jq -r '.[0].IPAM.Config[] | select(.Subnet | test("^[0-9]")) | .Subnet'
+```
+
 ## Local-Only Setup Organization
 
 To keep your repository clean and maintain a clear separation of concerns, organize your local-only setup files and commands as follows:
@@ -74,6 +80,9 @@ The provided setup script will:
 After step 5, Argo CD will reconcile everything under env/local/apps/** (MetalLB, ingress-nginx, cert-issuer, monitoring, argo-rollouts, online-boutique, etc.).
 
 ## Visit
+- ArgoCD: localhost:8080
+- Username/Pass: admin, L9QmAGiONFi705G1
+
 - https://boutique.local
  (app)
 - https://grafana.local
