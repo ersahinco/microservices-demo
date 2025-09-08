@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: online-boutique
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"   # wait until CRDs & ingress exist
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/ersahinco/microservices-demo.git
+    targetRevision: main
+    path: env/local/workloads/online-boutique
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: boutique
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
