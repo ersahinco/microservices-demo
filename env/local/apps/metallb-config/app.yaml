@@ -10,9 +10,10 @@ spec:
   source:
     repoURL: https://github.com/ersahinco/microservices-demo.git
     targetRevision: main
-    path: env/local/workloads/metallb-config
+    path: env/local/apps/metallb-config
   destination:
     server: https://kubernetes.default.svc
     namespace: metallb-system
   syncPolicy:
     automated: { prune: true, selfHeal: true }
+    syncOptions: [ "CreateNamespace=true" ]

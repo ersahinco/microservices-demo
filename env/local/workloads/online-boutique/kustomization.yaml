@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: boutique
 resources:
-  - ../../../../kubernetes-manifests   # ← reuse upstream manifests
+  - ../../../../kubernetes-manifests    # upstream base
   - namespace.yaml
   - rollout-frontend.yaml
   - svc-frontend-stable.yaml
@@ -10,7 +10,6 @@ resources:
   - ingress-frontend.yaml
   - analysis-success-rate.yaml
 patches:
-  # delete upstream Deployment and Service named 'frontend'
   - target: { kind: Deployment, name: frontend }
     patch: |-
       $patch: delete

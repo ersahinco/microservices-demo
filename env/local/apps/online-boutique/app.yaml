@@ -11,10 +11,11 @@ spec:
     repoURL: https://github.com/ersahinco/microservices-demo.git
     targetRevision: main
     path: env/local/workloads/online-boutique
+    kustomize: {}
   destination:
     server: https://kubernetes.default.svc
     namespace: boutique
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    automated: { prune: true, selfHeal: true }
+    syncOptions:
+      - CreateNamespace=true
