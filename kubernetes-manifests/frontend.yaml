@@ -44,7 +44,7 @@ spec:
                 - ALL
             privileged: false
             readOnlyRootFilesystem: true
-          image: localhost:5000/online-boutique/frontend:dev
+          image: frontend
           ports:
           - containerPort: 8080
           readinessProbe:
