@@ -9,6 +9,7 @@ resources:
   - svc-frontend-canary.yaml
   - ingress-frontend.yaml
   - analysis-success-rate.yaml
+  - image-updater.yaml
 patches:
   - target: { kind: Deployment, name: frontend }
     patch: |-
