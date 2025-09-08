@@ -12,7 +12,9 @@ resources:
 patches:
   - target: { kind: Deployment, name: frontend }
     patch: |-
-      - $patch: delete
+      - op: remove
+        path: /spec
   - target: { kind: Service, name: frontend }
     patch: |-
-      - $patch: delete
+      - op: remove
+        path: /spec
