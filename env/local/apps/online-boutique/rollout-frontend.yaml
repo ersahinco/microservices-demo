@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: frontend
+  namespace: boutique
+spec:
+  replicas: 3
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels: { app: frontend }
+  strategy:
+    canary:
+      canaryService: frontend-canary
+      stableService: frontend-stable
+      trafficRouting:
+        nginx:
+          stableIngress: frontend
+      steps:
+        - setWeight: 20
+        - pause: { duration: 60 }
+        - analysis:
+            templates:
+              - templateName: success-rate
+        - setWeight: 50
+        - pause: { duration: 60 }
+        - analysis:
+            templates:
+              - templateName: success-rate
+  template:
+    metadata:
+      labels: { app: frontend }
+    spec:
+      containers:
+      - name: server
+        image: localhost:5000/online-boutique/frontend:dev
+        ports: [{ containerPort: 8080 }]
+        readinessProbe:
+          httpGet: { path: "/", port: 8080 }
+          initialDelaySeconds: 5
+          periodSeconds: 5
