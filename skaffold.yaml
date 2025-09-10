@@ -40,7 +40,7 @@ build:
   - image: currencyservice
     context: src/currencyservice
   - image: cartservice
-    context: src/cartservice/src
+    context: src/cartservice
     docker:
       dockerfile: Dockerfile
   - image: frontend

@@ -1,0 +1,14 @@
+node_modules
+dist
+build
+*.log
+.env
+.DS_Store
+coverage
+npm-debug.log
+yarn-error.log
+.idea
+.vscode
+*.tsbuildinfo
+test
+__tests__
