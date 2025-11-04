@@ -1,0 +1,48 @@
+{
+  "name": "cartservice-ts",
+  "version": "1.0.0",
+  "description": "TypeScript implementation of the cart service for Online Boutique",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "grpc",
+    "microservices",
+    "cart",
+    "typescript"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.0",
+    "@grpc/proto-loader": "^0.7.10",
+    "@opentelemetry/api": "^1.7.0",
+    "@opentelemetry/api-logs": "^0.45.0",
+    "@opentelemetry/exporter-logs-otlp-grpc": "^0.45.0",
+    "@opentelemetry/exporter-logs-otlp-proto": "^0.207.0",
+    "@opentelemetry/exporter-metrics-otlp-grpc": "^0.45.0",
+    "@opentelemetry/exporter-metrics-otlp-proto": "^0.207.0",
+    "@opentelemetry/exporter-trace-otlp-grpc": "^0.45.0",
+    "@opentelemetry/exporter-trace-otlp-proto": "^0.207.0",
+    "@opentelemetry/instrumentation-grpc": "^0.45.0",
+    "@opentelemetry/resources": "^1.18.0",
+    "@opentelemetry/sdk-logs": "^0.45.0",
+    "@opentelemetry/sdk-node": "^0.45.0",
+    "@opentelemetry/semantic-conventions": "^1.18.0",
+    "ioredis": "^5.3.2",
+    "protobufjs": "^7.2.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.10.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.3.0"
+  }
+}

@@ -39,8 +39,8 @@ build:
     context: src/paymentservice
   - image: currencyservice
     context: src/currencyservice
-  - image: cartservice
-    context: src/cartservice/src
+  - image: cartservice-ts
+    context: src/cartservice-ts
     docker:
       dockerfile: Dockerfile
   - image: frontend
@@ -52,6 +52,7 @@ build:
   local:
     useDockerCLI: true
     useBuildkit: true
+    concurrency: 0
 manifests:
   kustomize:
     paths:

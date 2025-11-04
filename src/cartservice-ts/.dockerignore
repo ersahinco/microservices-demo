@@ -1,0 +1,33 @@
+# Dependencies
+node_modules
+npm-debug.log
+
+# Tests
+tests
+*.test.ts
+*.spec.ts
+jest.config.js
+coverage
+
+# Development files
+.git
+.gitignore
+
+# Build artifacts (will be copied from builder stage)
+dist
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+.env
+.env.local
+*.log
